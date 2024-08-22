@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        const $p1 = $('<p>一段文字</p>')
+        const $p2 = $('<p>一段文字</p>')
+        const $p3 = $('<p>一段文字</p>')
+        $('#container')
+            .append($p1)
+            .append($p2)
+            .append($p3)
+
+        // 微任务：渲染之前执行（DOM 结构已更新）
+        Promise.resolve().then(() => {
+            const length = $('#container').children().length
+            alert(`micro task ${length}`)
+        })
+
+        // 宏任务：渲染之后执行（DOM 结构已更新）
+        setTimeout(() => {
+            const length = $('#container').children().length
+            alert(`macro task ${length}`)
+        })
+    </script>
+</body>
+</html>

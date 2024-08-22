@@ -15,7 +15,7 @@
 export default {
     model: {
         prop: 'text1', // 对应 props text1
-        event: 'change1'
+        event: 'change1',
     },
     props: {
         text1: String,
@@ -25,3 +25,8 @@ export default {
     }
 }
 </script>
+
+<!-- /**
+ * 父组件中的v-model="message"实际上是v-bind:value="message" + v-on:input="message = $event"的简写。
+ * 这里，v-bind:value="message"将message作为prop传递给子组件，而v-on:input="message = $event"监听子组件发出的input事件，并更新message的值。
+ */ -->

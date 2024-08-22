@@ -15,9 +15,9 @@
 注意，全局只绑定一次即可。不要放在多次渲染的组件中，这样容易绑定多次。
 
 ```js
-window.onerror = function(msg, source, line, column, error) {
-    console.log('window.onerror---------', msg, source, line, column, error)
-}
+window.onerror = function (msg, source, line, column, error) {
+  console.log("window.onerror---------", msg, source, line, column, error);
+};
 // 注意，如果用 window.addEventListener('error', event => {}) 参数不一样！！！
 ```
 
@@ -36,10 +36,10 @@ errorCaptured(error, instance, info) {
 全局的错误监听，所有组件的报错都会汇总到这里来。PS：如果 `errorCaptured` 返回 `false` 则**不会**到这里。
 
 ```js
-const app = createApp(App)
+const app = createApp(App);
 app.config.errorHandler = (error, instance, info) => {
-    console.log('errorHandler--------', error, instance, info)
-}
+  console.log("errorHandler--------", error, instance, info);
+};
 ```
 
 请注意，`errorHandler` 会阻止错误走向 `window.onerror`。
@@ -61,11 +61,13 @@ mounted() {
 ## 答案
 
 方式
+
 - `errorCaptured` 监听下级组件的错误，可返回 `false` 阻止向上传播
 - `errorHandler` 监听 Vue 全局错误
 - `window.onerror` 监听其他的 JS 错误，如异步
 
 建议：结合使用
+
 - 一些重要的、复杂的、有运行风险的组件，可使用 `errorCaptured` 重点监听
 - 然后用 `errorHandler` `window.onerror` 候补全局监听，避免意外情况
 

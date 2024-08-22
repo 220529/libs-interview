@@ -24,7 +24,7 @@ ReactDOM.render(
       <App />
     </ErrorBoundary>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -32,9 +32,7 @@ ReactDOM.render(
 
 ```js
 function App(props) {
-    return <ErrorBoundary>
-        {props.children}
-    </ErrorBoundary>
+  return <ErrorBoundary>{props.children}</ErrorBoundary>;
 }
 ```
 
@@ -54,9 +52,9 @@ React 不需要 ErrorBoundary 来捕获事件处理器中的错误。与 `render
 ErrorBoundary 无法捕捉到异步报错，可使用 `window.onerror` 来监听。
 
 ```js
-window.onerror = function(msg, source, line, column, error) {
-    console.log('window.onerror---------', msg, source, line, column, error)
-}
+window.onerror = function (msg, source, line, column, error) {
+  console.log("window.onerror---------", msg, source, line, column, error);
+};
 // 注意，如果用 window.addEventListener('error', event => {}) 参数不一样！！！
 ```
 

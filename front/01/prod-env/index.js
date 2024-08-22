@@ -5,8 +5,10 @@ img1.onload = function () {
 
 window.addEventListener('load', function () {
     console.log('window loaded')
+    debugger
 })
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('dom content loaded')
+    debugger
 })

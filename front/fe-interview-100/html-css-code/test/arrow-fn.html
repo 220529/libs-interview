@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const name = "win";
+      const obj = {
+        name: "obj",
+        say1: () => {
+          console.log("i1 am is ", this.name);
+        },
+        say2: function () {
+          console.log("i2 am is ", this.name);
+        },
+      };
+      obj.say1();
+      obj.say2();
+
+      //   const fn1 = () => {
+      //     console.log("arguments", arguments);
+      //   };
+      function fn1() {
+        console.log("arguments", arguments);
+      }
+      fn1(100, 200);
+    </script>
+  </body>
+</html>

@@ -1,11 +1,11 @@
 <template>
     <div>
-        <p>vue 高级特性</p>
-        <hr>
+        <!-- <p>vue 高级特性</p>
+        <hr> -->
 
         <!-- 自定义 v-model -->
-        <!-- <p>{{name}}</p>
-        <CustomVModel v-model="name"/> -->
+        <p>{{name}}</p>
+        <CustomVModel v-model="name"/>
 
         <!-- nextTick -->
         <!-- <NextTick/> -->
@@ -31,31 +31,31 @@
         <!-- <KeepAlive/> -->
 
         <!-- mixin -->
-        <MixinDemo/>
+        <!-- <MixinDemo/> -->
     </div>
 </template>
 
 <script>
-// import CustomVModel from './CustomVModel'
+import CustomVModel from './CustomVModel'
 // import NextTick from './NextTick'
 // import SlotDemo from './SlotDemo'
 // import ScopedSlotDemo from './ScopedSlotDemo'
 // import KeepAlive from './KeepAlive'
-import MixinDemo from './MixinDemo'
+// import MixinDemo from './MixinDemo'
 
 export default {
     components: {
-        // CustomVModel
+        CustomVModel
         // NextTick
         // SlotDemo,
         // ScopedSlotDemo,
         // FormDemo: () => import('../BaseUse/FormDemo'),
         // KeepAlive
-        MixinDemo
+        // MixinDemo
     },
     data() {
         return {
-            name: '双越',
+            name: '1',
             website: {
                 url: 'http://imooc.com/',
                 title: 'imooc',

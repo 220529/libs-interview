@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Animal {
+            constructor(type) {
+                this.type = type
+            }
+        }
+        class Cat extends Animal {
+            constructor(name) {
+                super("cat")
+                this.name = name
+            }
+            say() {
+                console.log("i am a " + this.type + ", name: " + this.name);
+            }
+        }
+        const cat = new Cat("jack");
+        cat.say();
+        // ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+    </script>
+</body>
+</html>

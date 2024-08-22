@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const obj1 = {
+        a: 100,
+        b: {
+          x: 100,
+          y: 200,
+        },
+      };
+      const obj2 = {
+        a: 100,
+        b: {
+          x: 100,
+          y: 200,
+        },
+      };
+      // console.log( obj1 === obj2 )
+      console.log(isEqual(obj1, obj2));
+
+      function isObj(obj) {
+        return typeof obj === "object" && obj !== null;
+      }
+
+      function isEqual(obj1, obj2) {
+        if (obj1 === obj2) {
+          return true;
+        }
+        if (!isObj(obj1) || !isObj(obj2)) {
+          return obj1 === obj2;
+        }
+        const keys1 = Object.keys(obj1);
+        const keys2 = Object.keys(obj2);
+        if (keys1.length !== keys2.length) {
+          return false;
+        }
+        for (const key of keys1) {
+          if (!keys2.includes(key)) {
+            return false;
+          }
+          const tamp = isEqual(obj1[key], obj2[key]);
+          if (!tamp) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      const arr1 = [1, 2, 3];
+      const arr2 = [1, 2, 3];
+      const arr3 = [1, 2, 3, 4];
+
+      console.log(isEqual(arr1, arr2)); // true
+      console.log(isEqual(arr1, arr3)); // false
+    </script>
+  </body>
+</html>

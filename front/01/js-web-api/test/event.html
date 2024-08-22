@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">btn</button>
+    <div id="as">
+        <a href="#">a1</a><br>
+        <a href="#">a2</a><br>
+        <a href="#">a3</a><br>
+        <a href="#">a4</a><br>
+        <button>加载更多...</button>
+    </div>
+    <script>
+        const btn = document.querySelector(".btn");
+        // btn.addEventListener("click", e => {
+        //     e.stopPropagation();
+        //     console.log("btn...");
+        // })
+        // document.body.addEventListener("click", e => {
+        //     console.log("body...", e);
+        // })
+        const as = document.querySelector("#as a");
+        function event(elem, type, selector, fn) {
+            const el = document.querySelector(elem);
+            el.addEventListener(type, e => {
+                const isMatched = e.target.matches(selector)
+                console.log("isMatched", isMatched);
+                if (isMatched) {
+                    fn.call(e.target, e)
+                }
+            })
+        }
+        event("#as", "click", "a", function() {
+            console.log("a...", this.innerHTML);
+        })
+    </script>
+</body>
+</html>

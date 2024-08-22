@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 定义一个更新视图的函数
+      function updateView() {
+        console.log("视图已更新");
+      }
+
+      // 保存原始的 Array.prototype 方法
+      const oldArrayProperty = Array.prototype;
+
+      // 创建一个新的对象，原型指向 oldArrayProperty
+      const arrProto = Object.create(oldArrayProperty);
+
+      // 为 arrProto 扩展新的方法
+      ["push", "pop", "shift", "unshift", "splice"].forEach((methodName) => {
+        arrProto[methodName] = function () {
+          updateView(); // 触发视图更新
+          oldArrayProperty[methodName].apply(this, arguments);
+        };
+      });
+
+      // 测试代码
+      function testArrayProto() {
+        const arr = Object.create(arrProto);
+
+        arr.push(1);
+        arr.push(2);
+        console.log(arr); // 期待输出：[1, 2]
+
+        arr.pop();
+        console.log(arr); // 期待输出：[1]
+
+        arr.unshift(0);
+        console.log(arr); // 期待输出：[0, 1]
+      }
+
+      // 执行测试
+      testArrayProto();
+
+      // 检查原始 Array.prototype 的方法是否未受到影响
+      const testArray = [1, 2, 3];
+      testArray.push(4);
+      console.log(testArray); // 期待输出：[1, 2, 3, 4]
+      console.log("arrProto", arrProto);
+    </script>
+  </body>
+</html>

@@ -5,7 +5,9 @@ function flat(arr) {
         return arr // 已经是 flatern [1, 2, 3, 4]
     }
 
+    console.log("arr", arr);
     const res = Array.prototype.concat.apply([], arr)
+    console.log("res", res);
     return flat(res) // 递归
 }
 

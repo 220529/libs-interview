@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Garbage Collection Demo</title>
+  </head>
+  <body>
+    <h1>JS Garbage Collection Demo</h1>
+    <button id="trigger">开始内存测试</button>
+
+    <script>
+      let interval;
+      const maxCycles = 10; // 设置循环次数
+      const allocationSize = 10000000; // 每个实例的大小
+      let cycleCount = 0;
+
+      function createLargeObject() {
+        // 创建一个占用大量内存的对象
+        return new Array(allocationSize).fill({
+          name: "Memory Allocation",
+          value: Math.random(),
+        });
+      }
+
+      function runMemoryTest() {
+        if (interval) return; // 防止重复点击按钮
+
+        console.log("Starting memory test...");
+
+        interval = setInterval(() => {
+          let largeObject = createLargeObject();
+
+          console.log(`Cycle ${cycleCount + 1}: Created large object`);
+
+          // 等待一段时间后销毁对象
+          setTimeout(() => {
+            largeObject = null; // 解除引用，等待垃圾回收
+            console.log(`Cycle ${cycleCount + 1}: Large object destroyed`);
+
+            cycleCount++;
+            if (cycleCount >= maxCycles) {
+              clearInterval(interval);
+              alert("内存测试完成");
+            }
+          }, 500); // 每个周期内等待 500 毫秒
+        }, 1000); // 每次分配和清理的间隔时间为 1 秒
+      }
+
+      // 绑定按钮点击事件
+      document
+        .getElementById("trigger")
+        .addEventListener("click", runMemoryTest);
+    </script>
+  </body>
+</html>

@@ -11,7 +11,8 @@
 
     <!-- <AdvancedUse/> -->
 
-    <CartDemo/>
+    <!-- <CartDemo/> -->
+     <Test />
   </div>
 </template>
 
@@ -25,8 +26,9 @@
 // import ComponentDemo from './components/ComponentsDemo/index'
 
 // import AdvancedUse from './components/AdvancedUse/index'
+import Test from './components/test'
 
-import CartDemo from './components/Cart/index'
+// import CartDemo from './components/Cart/index'
 
 export default {
   name: 'app',
@@ -35,7 +37,8 @@ export default {
     // EventDemo
     // ComponentDemo
     // AdvancedUse
-    CartDemo
+    // CartDemo
+    Test
   }
 }
 </script>

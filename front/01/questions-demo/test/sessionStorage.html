@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("sessionStorage...");
+      // 获取数据
+      const username = sessionStorage.getItem("username");
+
+      if (!username) {
+        // 设置数据
+        sessionStorage.setItem("username", new Date().getTime());
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>strict mode</title>
+  </head>
+  <body>
+    <p>strict mode</p>
+
+    <script>
+      "use strict";
+      //   a = 1;
+      //   console.log("script.this: ", this);
+
+      //   const obj = { x: 100 };
+      //   with (obj) {
+      //     console.log("obj.x:", x);
+      //   }
+
+      //   var x = 10;
+      //   eval(`var x = 20; console.log("eval.x: ", x);`);
+      //   console.log("x: ", x);
+
+      //   function fn() {
+      //     console.log("fn.this: ", this);
+      //   }
+      //   fn();
+
+      function fn(x, x, y) {
+        console.log("fn.xxy: ", x, x, y);
+      }
+      fn(10, 20, 30);
+    </script>
+  </body>
+</html>

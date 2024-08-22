@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>XSS Demo</title>
+  </head>
+  <body>
+    <!-- <h1>留言板</h1> -->
+    <form id="commentForm">
+      <textarea id="comment" placeholder="输入你的留言"></textarea>
+      <button type="button" onclick="submitComment()">提交</button>
+    </form>
+    <div id="comments">
+      <!-- 留言显示区域 -->
+    </div>
+    <img src="http://47.93.17.251:16800/cats/66c43dd44d4f00394a51e026" alt="" />
+
+    <script src="https://rawgit.com/leizongmin/js-xss/master/dist/xss.js"></script>
+    <script>
+      function submitComment() {
+        const comment = document.getElementById("comment").value;
+        const commentsDiv = document.getElementById("comments");
+        var html = filterXSS('<script>alert("xss");</scr' + "ipt>");
+        commentsDiv.innerHTML += html;
+        // commentsDiv.innerHTML += `<p>${comment}</p>`;
+        document.getElementById("comment").value = "";
+      }
+    </script>
+  </body>
+</html>

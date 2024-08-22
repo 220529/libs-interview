@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const res = flat( [1, 2, [3, 4, [10, 20, [100, 200]]], 5] )
+        // function flat(arr) {
+        //     if (!Array.isArray(arr)) {
+        //         return arr
+        //     }
+        //     let res = []
+        //     arr.forEach(item => {
+        //         if (Array.isArray(item)) {
+        //             res = res.concat(flat(item));
+        //         } else {
+        //             res = res.concat(item);
+        //         }
+        //     })
+        //     return res
+        // }
+        function flat(arr) {
+            const deep = arr.some(i => Array.isArray(i));
+            if (!deep) {
+                return arr
+            }
+            const res = Array.prototype.concat.apply([], arr);
+            return flat(res)
+        }
+        console.log("res", res);
+    </script>
+</body>
+</html>

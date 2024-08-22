@@ -14,19 +14,22 @@ export default {
         }
     },
     setup() {
-        console.log('this1', this)
+        console.log('setup.this', this)
 
         onMounted(() => {
-            console.log('this in onMounted', this)
-            console.log('x', instance.data.x)
+            console.log('onMounted.this', this)
+            console.log('onMounted.this.x', instance.data.x)
         })
 
         const instance = getCurrentInstance()
-        console.log('instance', instance)
+        console.log('instance', instance, instance.data.x)
+    },
+    created() {
+        console.log('created.this', this)
     },
     mounted() {
-        console.log('this2', this)
-        console.log('y', this.y)
+        console.log('mounted.this', this)
+        console.log('mounted.this.y', this.y)
     }
 }
 </script>

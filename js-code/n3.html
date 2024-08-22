@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 定义一个树节点
+      class TreeNode {
+        constructor(value, children = []) {
+          this.value = value;
+          this.children = children;
+        }
+      }
+
+      // 创建两个简单的树
+      const treeA = new TreeNode(1, [
+        new TreeNode(2, [new TreeNode(4), new TreeNode(5)]),
+        new TreeNode(3),
+      ]);
+
+      const treeB = new TreeNode(1, [
+        new TreeNode(2, [
+          new TreeNode(4),
+          new TreeNode(6), // 与 treeA 中的不同
+        ]),
+        new TreeNode(3),
+      ]);
+
+      // 递归比较两棵树的所有节点及其子树
+      function compareTrees(nodeA, nodeB) {
+        // 如果两个节点都为空，则认为它们相等
+        if (!nodeA && !nodeB) return true;
+
+        // 如果其中一个为空，另一个不为空，则不相等
+        if (!nodeA || !nodeB) return false;
+
+        // 首先比较节点的值
+        if (nodeA.value !== nodeB.value) return false;
+
+        // 然后递归比较子树
+        const lengthA = nodeA.children.length;
+        const lengthB = nodeB.children.length;
+
+        // 子树数量不同，则不相等
+        if (lengthA !== lengthB) return false;
+
+        // 比较所有的子树
+        for (let i = 0; i < lengthA; i++) {
+          if (!compareTrees(nodeA.children[i], nodeB.children[i])) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      // 测试比较两棵树
+      console.time("Tree Comparison");
+      const result = compareTrees(treeA, treeB);
+      console.timeEnd("Tree Comparison");
+
+      console.log("Are the two trees identical? ", result);
+    </script>
+  </body>
+</html>

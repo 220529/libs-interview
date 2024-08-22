@@ -23,8 +23,8 @@ function loadImg(src) {
 //     console.log(img.height)
 // }).catch(ex => console.error(ex))
 
-const url1 = 'https://img.mukewang.com/5a9fc8070001a82402060220-140-140.jpg'
-const url2 = 'https://img3.mukewang.com/5a9fc8070001a82402060220-100-100.jpg'
+const url1 = 'https://lagou-zhaopin-fe.lagou.com/fed/lg-app-fed/toc/double11/20211104/1636014925416.png'
+const url2 = 'https://lagou-zhaopin-fe.lagou.com/fed/lg-app-fed/toc/double11/11.11_bg19%402x.png'
 
 loadImg(url1).then(img1 => {
     console.log(img1.width)

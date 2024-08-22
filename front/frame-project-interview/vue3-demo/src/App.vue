@@ -12,8 +12,8 @@
   <GetInstance/>
 
   <hr>
-  <button @click="changeHandler">change msg</button>
-  <button @click="changeFlagHandler">change flag</button>
+  <!-- <button @click="changeHandler">change msg</button>
+  <button @click="changeFlagHandler">change flag</button> -->
 </template>
 
 <script>

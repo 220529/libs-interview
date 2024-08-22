@@ -1,0 +1,36 @@
+<!-- victim.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victim Page</title>
+  </head>
+  <body>
+    <h1>Welcome to the Victim Site</h1>
+    <form action="/login" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" /><br /><br />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" /><br /><br />
+      <button id="btn" type="submit">Login</button>
+    </form>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        alert(123);
+        console.log(89);
+        console.log(
+          "top.location",
+          top.location.hostname,
+          self.location.hostname
+        );
+
+        if (top.location.hostname !== self.location.hostname) {
+          alert("您正在访问不安全的页面，即将跳转到安全页面！");
+          top.location.href = self.location.href;
+        }
+      });
+    </script>
+  </body>
+</html>

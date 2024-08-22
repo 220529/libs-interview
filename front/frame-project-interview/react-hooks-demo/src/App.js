@@ -10,7 +10,9 @@ import React, { useState } from 'react';
 // import CustomHookUsage from './components/CustomHookUsage'
 // import Teach from './components/Teach'
 // import UseStateTrap from './components/UseStateTrap'
-import UseEffectChangeState from './components/UseEffectChangeState'
+// import UseEffectChangeState from './components/UseEffectChangeState'
+// import SCUDemo2 from './components/SCUDemo2'
+import EventDemo from './components/EventDemo'
 
 function App() {
   const [flag, setFlag] = useState(true)
@@ -18,7 +20,7 @@ function App() {
 
   return (
     <div>
-      <p>React Hooks 示例（双越老师）</p>
+      {/* <p>React Hooks 示例（双越老师）</p> */}
       <div>
         <button onClick={() => setFlag(false)}>flag = false</button>
         <button onClick={() => setId(id + 1)}>id++</button>
@@ -27,7 +29,7 @@ function App() {
       <hr></hr>
       {/* <ClickCounter/> */}
       {/* {flag && <LifeCycles/>} */}
-      {/* {flag && <FriendStatus friendId={id}/>} */}
+      {flag && <FriendStatus friendId={id}/>}
       {/* <UseRefDemo/> */}
       {/* <UseContextDemo/> */}
       {/* <UseReducerDemo/> */}
@@ -36,7 +38,9 @@ function App() {
       {/* {flag && <CustomHookUsage/>} */}
       {/* <Teach couseName="《前端框架面试课3》"/> */}
       {/* <UseStateTrap/> */}
-      <UseEffectChangeState/>
+      {/* <UseEffectChangeState/> */}
+      {/* <SCUDemo2 /> */}
+      <EventDemo />
     </div>
   );
 }

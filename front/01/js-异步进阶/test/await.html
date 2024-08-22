@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      (async function () {
+        const p1 = new Promise(() => {});
+        await p1;
+        console.log("p1"); // 不会执行
+      })();
+      (async function () {
+        const p2 = Promise.resolve(100);
+        const res = await p2;
+        console.log(res); // 100
+      })();
+      (async function () {
+        const res = await 100;
+        console.log(res); // 100
+      })();
+      (async function () {
+        const p3 = Promise.reject("some err");
+        const res = await p3;
+        console.log(res); // 不会执行
+      })();
+    </script>
+  </body>
+</html>

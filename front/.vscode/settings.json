@@ -1,0 +1,67 @@
+{
+  // 设置默认的编码格式为 UTF-8
+  "files.encoding": "utf8",
+
+  // 默认的换行符为 LF (Unix 风格)
+  "files.eol": "\n",
+
+  // 自动保存文件的时间间隔（毫秒）
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 2000,
+
+  // 设置编辑器字体大小
+  "editor.fontSize": 13,
+
+  // 启用自动换行
+  "editor.wordWrap": "on",
+
+  // 显示行号
+  "editor.lineNumbers": "on",
+
+  // 显示空格和制表符
+  "editor.renderWhitespace": "all",
+
+  // 启用代码格式化
+  "editor.formatOnSave": true,
+
+  // 配置 ESLint 用于 JavaScript 和 TypeScript 的代码检查
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  // 配置 TypeScript 代码检查的规则
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  // 配置 Prettier 作为默认的代码格式化工具
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // 配置文件排除规则
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true
+  },
+
+  // 配置 Git 相关设置
+  "git.enabled": true,
+
+  // 设置终端配置
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+
+  // 设置 Tab 键为 4 个空格
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+
+  // 对于不同语言的特定设置（例如 JavaScript 和 TypeScript）
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.tabSize": 2
+  }
+}

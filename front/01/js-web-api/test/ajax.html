@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const url = "https://dog.ceo/api/breeds/image/random";
+      const xml = new XMLHttpRequest();
+      xml.open("GET", url, true);
+      xml.onreadystatechange = function() {
+        // console.log(xml);
+        if (xml.readyState === 4 && xml.status === 200) {
+            console.log("xml.", JSON.parse(xml.responseText));
+        }
+      };
+      xml.send(null);
+
+    </script>
+  </body>
+</html>
