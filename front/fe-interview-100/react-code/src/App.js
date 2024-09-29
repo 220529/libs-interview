@@ -2,7 +2,8 @@
 // import ErrorDemoFunctional from "./components/ErrorDemo/FunctionalDemo"
 // import ErrorDemoClass from "./components/ErrorDemo/ClassDemo"
 // import SetStateDemo from './components/SetStateDemo'
-import SetStateDemo2 from './components/SetStateDemo2'
+// import SetStateDemo2 from './components/SetStateDemo2'
+import Event from "./components/Event";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       {/* <ErrorDemoFunctional></ErrorDemoFunctional> */}
       {/* <ErrorDemoClass></ErrorDemoClass> */}
       {/* <SetStateDemo/> */}
-      <SetStateDemo2/>
+      {/* <SetStateDemo2/> */}
+      <Event />
     </>
   );
 }

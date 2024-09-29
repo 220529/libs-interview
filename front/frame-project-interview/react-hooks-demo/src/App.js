@@ -12,7 +12,8 @@ import React, { useState } from 'react';
 // import UseStateTrap from './components/UseStateTrap'
 // import UseEffectChangeState from './components/UseEffectChangeState'
 // import SCUDemo2 from './components/SCUDemo2'
-import EventDemo from './components/EventDemo'
+// import EventDemo from './components/EventDemo'
+import EventDemo from './components/Event'
 
 function App() {
   const [flag, setFlag] = useState(true)
@@ -29,7 +30,7 @@ function App() {
       <hr></hr>
       {/* <ClickCounter/> */}
       {/* {flag && <LifeCycles/>} */}
-      {flag && <FriendStatus friendId={id}/>}
+      {/* {flag && <FriendStatus friendId={id}/>} */}
       {/* <UseRefDemo/> */}
       {/* <UseContextDemo/> */}
       {/* <UseReducerDemo/> */}
@@ -40,7 +41,7 @@ function App() {
       {/* <UseStateTrap/> */}
       {/* <UseEffectChangeState/> */}
       {/* <SCUDemo2 /> */}
-      <EventDemo />
+      {/* <EventDemo /> */}
     </div>
   );
 }
